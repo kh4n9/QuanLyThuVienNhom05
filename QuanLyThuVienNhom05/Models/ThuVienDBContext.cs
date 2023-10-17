@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace QuanLyThuVienNhom05.Models
 {
-    public partial class Model1 : DbContext
+    public partial class ThuVienDBContext : DbContext
     {
-        public Model1()
+        public ThuVienDBContext()
             : base("name=ThuVienDBContext")
         {
         }
