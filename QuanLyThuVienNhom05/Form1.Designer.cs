@@ -67,8 +67,8 @@
             // 
             this.đọcToolStripMenuItem.Name = "đọcToolStripMenuItem";
             this.đọcToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.đọcToolStripMenuItem.Text = "Độc Giả ";
-            this.đọcToolStripMenuItem.Click += new System.EventHandler(this.đọcToolStripMenuItem_Click);
+            this.đọcToolStripMenuItem.Text = "Sách";
+            this.đọcToolStripMenuItem.Click += new System.EventHandler(this.SáchToolStripMenuItem_Click);
             // 
             // nhânViênToolStripMenuItem
             // 

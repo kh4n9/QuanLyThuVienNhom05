@@ -61,11 +61,11 @@
     <Compile Include="BangCap.Designer.cs">
       <DependentUpon>BangCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="DocGia.cs">
+    <Compile Include="Sach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocGia.Designer.cs">
-      <DependentUpon>DocGia.cs</DependentUpon>
+    <Compile Include="Sach.Designer.cs">
+      <DependentUpon>Sach.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -92,8 +92,8 @@
     <EmbeddedResource Include="BangCap.resx">
       <DependentUpon>BangCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocGia.resx">
-      <DependentUpon>DocGia.cs</DependentUpon>
+    <EmbeddedResource Include="Sach.resx">
+      <DependentUpon>Sach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -25,11 +25,11 @@ namespace QuanLyThuVienNhom05
             bangCap.Show();
         }
 
-        private void đọcToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DocGia docGia = new DocGia();
-            docGia.MdiParent = this;
-            docGia.Show();
+            Sach Sach = new Sach();
+            Sach.MdiParent = this;
+            Sach.Show();
         }
 
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
