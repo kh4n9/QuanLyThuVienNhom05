@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyThuVienNhom05.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace QuanLyThuVienNhom05
 {
     public partial class DocGia : Form
     {
+        static ThuVienDBContext context = new ThuVienDBContext();
+        List<DOCGIA> listDocGia = context.DOCGIAs.ToList();
         public DocGia()
         {
             InitializeComponent();
