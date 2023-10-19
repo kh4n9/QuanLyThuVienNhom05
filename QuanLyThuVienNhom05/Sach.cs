@@ -180,24 +180,26 @@ namespace QuanLyThuVienNhom05
 
         private void txtNamXB_TextChanged(object sender, EventArgs e)
         {
-            foreach (var c in e.ToString())
+            foreach (var c in txtNamXB.Text)
             {
-                if (!Char.IsDigit(c))
+                if (!Char.IsNumber(c))
                 {
                     MessageBox.Show("Chỉ được phép dán chuỗi có chứa số");
                     txtNamXB.Text = "";
+                    break;
                 }
             }
         }
 
         private void txtTriGia_TextChanged(object sender, EventArgs e)
         {
-            foreach (var c in e.ToString())
+            foreach (var c in txtTriGia.Text)
             {
-                if (!Char.IsDigit(c))
+                if (!Char.IsNumber(c))
                 {
                     MessageBox.Show("Chỉ được phép dán chuỗi có chứa số");
                     txtTriGia.Text = "";
+                    break;
                 }
             }
         }
