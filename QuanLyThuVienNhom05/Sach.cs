@@ -49,28 +49,44 @@ namespace QuanLyThuVienNhom05
             dtpNgayNhap.Value = selectedSach.NgayNhap.Value;
         }
 
+        private bool MissingCheck()
+        {
+            if (txtTenSach.Text == "" || txtTacGia.Text == "" || txtNamXB.Text == "" || txtNhaXB.Text == "" || txtTriGia.Text == "")
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            SACH timSach = context.SACHes.FirstOrDefault(s => s.TenSach.Contains(txtTenSach.Text));
-            if (timSach == null)
+            if (!MissingCheck())
             {
-                SACH addSach = new SACH();
-                addSach.MaSach = 1;
-                addSach.TenSach = txtTenSach.Text;
-                addSach.TacGia = txtTacGia.Text;
-                addSach.NamXuatBan = int.Parse(txtNamXB.Text);
-                addSach.NhaXuatBan = txtNhaXB.Text;
-                addSach.TriGia = int.Parse(txtTriGia.Text);
-                addSach.NgayNhap = dtpNgayNhap.Value;
-                context.SACHes.Add(addSach);
-                context.SaveChanges();
-                listSach.Add(addSach);
-                BindGrid(listSach);
-                MessageBox.Show("Thêm sách thành công!");
+                SACH timSach = context.SACHes.FirstOrDefault(s => s.TenSach.Contains(txtTenSach.Text));
+                if (timSach == null)
+                {
+                    SACH addSach = new SACH();
+                    addSach.MaSach = 1;
+                    addSach.TenSach = txtTenSach.Text;
+                    addSach.TacGia = txtTacGia.Text;
+                    addSach.NamXuatBan = int.Parse(txtNamXB.Text);
+                    addSach.NhaXuatBan = txtNhaXB.Text;
+                    addSach.TriGia = int.Parse(txtTriGia.Text);
+                    addSach.NgayNhap = dtpNgayNhap.Value;
+                    context.SACHes.Add(addSach);
+                    context.SaveChanges();
+                    listSach.Add(addSach);
+                    BindGrid(listSach);
+                    MessageBox.Show("Thêm sách thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Tên sách này đã tồn tại!");
+                }
             }
             else
             {
-                MessageBox.Show("Tên sách này đã tồn tại!");
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
             }
         }
 
@@ -84,6 +100,11 @@ namespace QuanLyThuVienNhom05
                 context.SaveChanges();
                 listSach.Remove(deleteSach);
                 BindGrid(listSach);
+                txtTenSach.Text = "";
+                txtTacGia.Text = "";
+                txtNamXB.Text = "";
+                txtNhaXB.Text = "";
+                txtTriGia.Text = "";
                 MessageBox.Show("Đã xóa thành công!");
             }
             else
@@ -94,26 +115,33 @@ namespace QuanLyThuVienNhom05
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string maSach = dgvShow.SelectedRows[0].Cells[0].Value.ToString();
-            var updateSach = context.SACHes.FirstOrDefault(s => s.MaSach.ToString() == maSach);
-            if (updateSach != null)
+            if (!MissingCheck())
             {
-                listSach.Remove(updateSach);
-                updateSach.MaSach = 1;
-                updateSach.TenSach = txtTenSach.Text;
-                updateSach.TacGia = txtTacGia.Text;
-                updateSach.NamXuatBan = int.Parse(txtNamXB.Text);
-                updateSach.NhaXuatBan = txtNhaXB.Text;
-                updateSach.TriGia = int.Parse(txtTriGia.Text);
-                updateSach.NgayNhap = dtpNgayNhap.Value;
-                context.SaveChanges();
-                listSach.Add(updateSach);
-                BindGrid(listSach);
-                MessageBox.Show("Sửa thành công!");
+                string maSach = dgvShow.SelectedRows[0].Cells[0].Value.ToString();
+                var updateSach = context.SACHes.FirstOrDefault(s => s.MaSach.ToString() == maSach);
+                if (updateSach != null)
+                {
+                    listSach.Remove(updateSach);
+                    updateSach.MaSach = 1;
+                    updateSach.TenSach = txtTenSach.Text;
+                    updateSach.TacGia = txtTacGia.Text;
+                    updateSach.NamXuatBan = int.Parse(txtNamXB.Text);
+                    updateSach.NhaXuatBan = txtNhaXB.Text;
+                    updateSach.TriGia = int.Parse(txtTriGia.Text);
+                    updateSach.NgayNhap = dtpNgayNhap.Value;
+                    context.SaveChanges();
+                    listSach.Add(updateSach);
+                    BindGrid(listSach);
+                    MessageBox.Show("Sửa thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Không tồn tại sách có mã này!");
+                }
             }
             else
             {
-                MessageBox.Show("Không tồn tại sách có mã này!");
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
             }
         }
 
@@ -127,6 +155,50 @@ namespace QuanLyThuVienNhom05
             {
                 List<SACH> sachs = context.SACHes.Where(s => s.TenSach.Contains(txtTimKiem.Text) || s.TacGia.Contains(txtTimKiem.Text) || s.NhaXuatBan.Contains(txtTimKiem.Text)).ToList();
                 BindGrid(sachs);
+            }
+        }
+
+        private void dtpBatDau_ValueChanged(object sender, EventArgs e)
+        {
+            List<SACH> sachs = context.SACHes.Where(s => s.NgayNhap.Value >= dtpBatDau.Value && s.NgayNhap.Value <= dtpKetThuc.Value).ToList();
+            BindGrid(sachs);
+        }
+
+        private void btnDatLai_Click(object sender, EventArgs e)
+        {
+            txtTimKiem.Text = "";
+            BindGrid(listSach);
+        }
+
+        private void txtNamXB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNamXB_TextChanged(object sender, EventArgs e)
+        {
+            foreach (var c in e.ToString())
+            {
+                if (!Char.IsDigit(c))
+                {
+                    MessageBox.Show("Chỉ được phép dán chuỗi có chứa số");
+                    txtNamXB.Text = "";
+                }
+            }
+        }
+
+        private void txtTriGia_TextChanged(object sender, EventArgs e)
+        {
+            foreach (var c in e.ToString())
+            {
+                if (!Char.IsDigit(c))
+                {
+                    MessageBox.Show("Chỉ được phép dán chuỗi có chứa số");
+                    txtTriGia.Text = "";
+                }
             }
         }
     }
