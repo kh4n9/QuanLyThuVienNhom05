@@ -168,6 +168,7 @@ namespace QuanLyThuVienNhom05
         {
             txtTimKiem.Text = "";
             BindGrid(listSach);
+            MessageBox.Show("Đặt lại thành công!");
         }
 
         private void txtNamXB_KeyPress(object sender, KeyPressEventArgs e)

@@ -148,6 +148,7 @@ namespace QuanLyThuVienNhom05
             else
             {
                 List<BANGCAP> BANGCAPs = context.BANGCAPs.Where(s => s.TenBangCap.Contains(txtTimKiem.Text)).ToList();
+                BindGrid(BANGCAPs);
             }
         }
     }

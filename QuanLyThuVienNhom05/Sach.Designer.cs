@@ -70,7 +70,7 @@
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(100, 28);
-            this.btnSua.TabIndex = 15;
+            this.btnSua.TabIndex = 9;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -81,7 +81,7 @@
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 28);
-            this.btnXoa.TabIndex = 14;
+            this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -92,7 +92,7 @@
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 28);
-            this.btnThem.TabIndex = 13;
+            this.btnThem.TabIndex = 7;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -127,7 +127,7 @@
             this.dtpNgayNhap.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
             this.dtpNgayNhap.Size = new System.Drawing.Size(272, 22);
-            this.dtpNgayNhap.TabIndex = 7;
+            this.dtpNgayNhap.TabIndex = 6;
             // 
             // txtTriGia
             // 
@@ -135,7 +135,7 @@
             this.txtTriGia.Margin = new System.Windows.Forms.Padding(4);
             this.txtTriGia.Name = "txtTriGia";
             this.txtTriGia.Size = new System.Drawing.Size(272, 22);
-            this.txtTriGia.TabIndex = 6;
+            this.txtTriGia.TabIndex = 5;
             this.txtTriGia.TextChanged += new System.EventHandler(this.txtTriGia_TextChanged);
             this.txtTriGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamXB_KeyPress);
             // 
@@ -145,7 +145,7 @@
             this.txtNhaXB.Margin = new System.Windows.Forms.Padding(4);
             this.txtNhaXB.Name = "txtNhaXB";
             this.txtNhaXB.Size = new System.Drawing.Size(272, 22);
-            this.txtNhaXB.TabIndex = 5;
+            this.txtNhaXB.TabIndex = 4;
             // 
             // txtNamXB
             // 
@@ -153,7 +153,7 @@
             this.txtNamXB.Margin = new System.Windows.Forms.Padding(4);
             this.txtNamXB.Name = "txtNamXB";
             this.txtNamXB.Size = new System.Drawing.Size(272, 22);
-            this.txtNamXB.TabIndex = 4;
+            this.txtNamXB.TabIndex = 3;
             this.txtNamXB.TextChanged += new System.EventHandler(this.txtNamXB_TextChanged);
             this.txtNamXB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamXB_KeyPress);
             // 
@@ -163,7 +163,7 @@
             this.txtTacGia.Margin = new System.Windows.Forms.Padding(4);
             this.txtTacGia.Name = "txtTacGia";
             this.txtTacGia.Size = new System.Drawing.Size(272, 22);
-            this.txtTacGia.TabIndex = 3;
+            this.txtTacGia.TabIndex = 2;
             // 
             // txtTenSach
             // 
@@ -171,7 +171,7 @@
             this.txtTenSach.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.Size = new System.Drawing.Size(272, 22);
-            this.txtTenSach.TabIndex = 2;
+            this.txtTenSach.TabIndex = 1;
             // 
             // label2
             // 
@@ -310,7 +310,7 @@
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(308, 22);
-            this.txtTimKiem.TabIndex = 6;
+            this.txtTimKiem.TabIndex = 10;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // label8
@@ -341,6 +341,7 @@
             this.dtpBatDau.Name = "dtpBatDau";
             this.dtpBatDau.Size = new System.Drawing.Size(114, 22);
             this.dtpBatDau.TabIndex = 7;
+            this.dtpBatDau.TabStop = false;
             this.dtpBatDau.ValueChanged += new System.EventHandler(this.dtpBatDau_ValueChanged);
             // 
             // dtpKetThuc
@@ -351,6 +352,7 @@
             this.dtpKetThuc.Name = "dtpKetThuc";
             this.dtpKetThuc.Size = new System.Drawing.Size(114, 22);
             this.dtpKetThuc.TabIndex = 7;
+            this.dtpKetThuc.TabStop = false;
             this.dtpKetThuc.ValueChanged += new System.EventHandler(this.dtpBatDau_ValueChanged);
             // 
             // label9
