@@ -102,8 +102,8 @@ namespace QuanLyThuVienNhom05
                     {
                         context.BANGCAPs.Remove(deleteBangCap);
                         context.SaveChanges();
-                        var BANGCAPs = context.BANGCAPs.ToList();
-                        BindGrid(BANGCAPs);
+                        listBangCap.Remove(deleteBangCap);
+                        BindGrid(listBangCap);
                         MessageBox.Show("Xóa thành công", "Thông báo");
                     }
                     else

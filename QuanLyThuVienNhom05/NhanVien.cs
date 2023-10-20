@@ -33,6 +33,10 @@ namespace QuanLyThuVienNhom05
                 dgvShow.Rows[index].Cells[2].Value = item.NgaySinh;
                 dgvShow.Rows[index].Cells[3].Value = item.DiaChi;
                 dgvShow.Rows[index].Cells[4].Value = item.DienThoai;
+                if (item.BANGCAP.TenBangCap == null)
+                {
+                    MessageBox.Show("test");
+                }
                 dgvShow.Rows[index].Cells[5].Value = item.BANGCAP.TenBangCap;
             }
         }
